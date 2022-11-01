@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,13 @@
     <title>VIJAY ANDHRA MEMO SERVICE</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="./Transport-Truck.ico" type="image/x-icon">
+    <script src="./Vijay_memo.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.31.3/docxtemplater.js" defer></script>
+    <script src="https://unpkg.com/pizzip@3.1.1/dist/pizzip.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+    <script src="https://unpkg.com/pizzip@3.1.1/dist/pizzip-utils.js" defer></script>
 </head>
+
 <body>
     <nav>
         <ul id="navigation">
@@ -15,8 +22,141 @@
             <li class="nav_items"><a href="./Vijay_memo.html">VARL MEMO</a></li>
             <li class="nav_items"><a href="./Own_slip.html">OTS SLIP</a></li>
             <li class="nav_items"><a href="./Vijay_slip.html">VARL SLIP</a></li>
-        </ul>    
+        </ul>
     </nav>
-    
+
+    <form id="main" method="post">
+
+        <h2 id="heading">VIJAY ANDHRA MEMO GENERATOR</h2>
+
+        <label for="Memo_no">Memo Number:</label>
+        <input type="number" name="Memo_no" id="Memo_no" class="text_box" placeholder="Please Enter the Memo Number!">
+
+        <label for="Truck_number">Truck Number:</label>
+        <input type="text" name="Truck_number" id="Truck_number" class="text_box"
+            placeholder="Please Enter the Truck number!">
+
+        <label for="Date">Date:</label>
+        <input type="date" name="Date" id="Date" class="text_box" placeholder="Please Enter the Desired Date!">
+
+        <label for="Pickup_location">Pickup Location:</label>
+        <input type="text" name="Pickup_location" id="Pickup_location" class="text_box"
+            placeholder="Please Enter the Pickup Location!">
+
+        <label for="Driver_name">Driver Name:</label>
+        <input type="text" name="Driver_name" id="Driver_name" class="text_box"
+            placeholder="Please Enter the Driver Name!">
+
+        <label for="Drop_location">Drop Location:</label>
+        <input type="text" name="Drop_location" id="Drop_location" class="text_box"
+            placeholder="Please Enter the Drop Location!">
+
+        <label for="Truck_owner_address">Owner Address</label>
+        <input type="text" name="Truck_owner_address" id="Truck_owner_address" class="text_box"
+            placeholder="Please Enter the Truck Owner Address!">
+
+        <label for="Truck_owner_name">Owner Name</label>
+        <input type="text" name="Truck_owner_name" id="Truck_owner_name" class="text_box"
+            placeholder="Please Enter the Truck Owner Name!">
+
+        <label for="Driver_number">Driver Number:</label>
+        <input type="tel" name="Driver_number" id="Driver_number" class="text_box"
+            placeholder="Please Enter the Driver Number!">
+
+        <label for="Driving_license_number">Driving License Number:</label>
+        <input type="text" name="Driving_license_number" id="Driving_license_number" class="text_box"
+            placeholder="Please Enter the Driving License Number:">
+
+        <label for="Consignor">Consignor:</label>
+        <input type="text" name="Consignor" id="Consignor" class="text_box" placeholder="Please Enter the Consignor!">
+
+        <label for="Consignee">Consignee:</label>
+        <input type="text" name="Consignee" id="Consignee" class="text_box" placeholder="Please Enter the Consignee!">
+
+        <label for="Particulars">Particulars:</label>
+        <input type="text" name="Particulars" id="Particulars" class="text_box"
+            placeholder="Please Enter the Particulars!">
+
+        <label for="Articles">Articles:</label>
+        <input type="text" name="Articles" id="Articles" class="text_box" placeholder="Please Enter the Articles!">
+
+        <label for="Weight">Weight:</label>
+        <input type="text" name="Weight" id="Weight" class="text_box" placeholder="Please Enter the Weight!">
+
+        <label for="Total_collection">Total Collection:</label>
+        <input type="number" name="Total_collection" id="Total_collection" class="text_box"
+            placeholder="Please Enter the Total Collection!">
+
+        <label for="Height_charge">Height Charge:</label>
+        <input type="number" name="Height_charge" id="Height_charge" class="text_box"
+            placeholder="Please Enter the Height Charge!">
+
+        <label for="Height_freight">Height Freight:</label>
+        <input type="number" name="Height_freight" id="Height_freight" class="text_box"
+            placeholder="Please Enter the Height Freight!">
+
+        <label for="Workout">Per Ton Workout Rs:</label>
+        <input type="number" name="Workout" id="Workout" class="text_box"
+            placeholder="Please Enter the Per Ton Workout Rs!">
+
+        <label for="Fixed_rupees">Lorry Hired Fixed Rs:</label>
+        <input type="number" name="Fixed_rupees" id="Fixed_rupees" class="text_box"
+            placeholder="Please Enter the Lorry Hired Fixed Rs!">
+
+        <label for="Advance">Advance Rs:</label>
+        <input type="number" name="Advance" id="Advance" class="text_box" placeholder="Please Enter the Advance Rs!">
+
+        <label for="Payment_location">Payment Location:</label>
+        <input type="text" name="Payment_location" id="Payment_location" class="text_box"
+            placeholder="Please Enter the Payment Location!">
+
+        <label for="Remarks">Remarks:</label>
+        <input type="text" name="Remarks" id="Remarks" class="text_box" placeholder="Please Enter the Remarks!">
+
+        <label for="Commission">Commission:</label>
+        <input type="number" name="Commission" id="Commission" class="text_box"
+            placeholder="Please Enter the Commission!">
+
+        <label for="Tapal_amount">Hamali & Tapal:</label>
+        <input type="number" name="Tapal_amount" id="Tapal_amount" class="text_box"
+            placeholder="Please Enter the Tapal Amount!">
+
+        <label for="Weight_wage">Weight Wage:</label>
+        <input type="number" name="Weight_wage" id="Weight_wage" class="text_box"
+            placeholder="Please Enter the Weight Wage!">
+
+        <label for="Guide">Guide / L Drive:</label>
+        <input type="number" name="Guide" id="Guide" class="text_box" placeholder="Please Enter the Guide name!">
+
+        <label for="other_charges">Other charges:</label>
+        <input type="number" name="other_charges" id="other_charges" class="text_box"
+            placeholder="Please Enter Other charges!">
+
+        <label for="Collection">Total Collection:</label>
+        <input type="number" name="Collection" id="Collection" class="text_box"
+            placeholder="Please Enter the Total Collection!">
+
+        <label for="Actual_rupees">Actual Lorry Hired Fixed Rs:</label>
+        <input type="number" name="Actual_rupees" id="Actual_rupees" class="text_box"
+            placeholder="Please Enter the Actual Lorry Hired Fixed Rs!">
+
+        <label for="Freight">Over Freight:</label>
+        <input type="number" name="Freight" id="Freight" class="text_box" placeholder="Please Enter the Over Freight!">
+
+        <label for="Difference">Difference:</label>
+        <input type="number" name="Difference" id="Difference" class="text_box"
+            placeholder="Please Enter the Difference">
+
+        <label for="Special_instruction">Special Instruction:</label>
+        <textarea name="Special_instruction" id="Special_instruction" cols="30" rows="10"></textarea>
+
+        <label for="doc">Word Template:</label>
+        <input type="file" id="doc"
+            accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+
+        <button type="submit" id="generate_btn">Generate document</button>
+    </form>
+
 </body>
+
 </html>
