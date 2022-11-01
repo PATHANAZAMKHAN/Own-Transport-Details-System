@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIJAY ANDHRA SLIP SERVICE</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./Transport-Truck.ico" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.31.6/docxtemplater.js" defer></script>
+    <script src="https://unpkg.com/pizzip@3.1.1/dist/pizzip.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js" defer></script>
+    <script src="https://unpkg.com/pizzip@3.1.1/dist/pizzip-utils.js" defer></script>
+    <script src="./Vijay_slip.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul id="navigation">
+            <li class="nav_items"><a href="./Own_memo.html">OTS MEMO</a></li>
+            <li class="nav_items"><a href="./Vijay_memo.html">VARL MEMO</a></li>
+            <li class="nav_items"><a href="./Own_slip.html">OTS SLIP</a></li>
+            <li class="nav_items"><a href="./Vijay_slip.html">VARL SLIP</a></li>
+        </ul>    
+    </nav>
+
+    <form id="main" method="post">
+
+        <h2 id="heading">VIJAY ANDHRA SLIP GENERATOR</h2>
+
+        <label for="Date">Date:</label>
+        <input type="date" name="Date" id="Date" class="text_box" placeholder="Please Enter the Desired Date!">
+
+        <label for="Sir-name">Sir Name:</label>
+        <input type="text" name="Sir-name" id="Sir-name" class="text_box"
+            placeholder="Please Enter the Sir Name!">
+
+        <label for="Party-name">Party Name:</label>
+        <input type="text" name="Party-name" id="Party-name" class="text_box" placeholder="Please Enter the Party Name!">
+
+        <label for="Truck-number">Truck Number:</label>
+        <input type="text" name="Truck-number" id="Truck-number" class="text_box"
+            placeholder="Please Enter the Truck number!">
+
+        <label for="Drop-location">To:</label>
+        <input type="text" name="Drop-location" id="Drop-location" class="text_box"
+            placeholder="Please Enter the Drop Location!">
+
+        <label for="Pickup-location">From:</label>
+        <input type="text" name="Pickup-location" id="Pickup-location" placeholder="Please Enter the Pickup Location">
+
+        <label for="Fixed-rate">Fixed Rate:</label>
+        <input type="text" name="Fixed-rate" id="Fixed-rate" class="text_box"
+            placeholder="Please Enter the Fixed Rate!">
+
+        <label for="Advance-wage">Advance Wage:</label>
+        <input type="number" name="Advance-wage" id="Advance-wage" class="text_box"
+            placeholder="Please Enter the Advance Wage!">
+
+        <label for="Load">Load:</label>
+        <input type="text" name="Load" id="Load" class="text_box" placeholder="Please Enter the Load!">
+
+        <label for="Payment-location">Balance:</label>
+        <input type="text" name="Payment-location" id="Payment-location" class="text_box"
+            placeholder="Please Enter the Payment Location!">
+
+        <label for="Remark">Remark:</label>
+        <input type="text" name="Remark" id="Remark" class="text_box" placeholder="Please Enter the Remark!">
+
+        <label for="Unloading_point">Unloading Point:</label>
+        <input type="text" name="Unloading_point" id="Unloading_point" class="text_box" placeholder="Please Enter the Unloading Point!">
+
+        <label for="doc">Word Template:</label>
+        <input type="file" id="doc"
+            accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
+
+        <button type="submit" id="generate_btn">Generate document</button>
+    </form>
+
+</body>
+</html>
