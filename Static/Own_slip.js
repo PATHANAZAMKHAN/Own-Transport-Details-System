@@ -2,6 +2,8 @@ const docs = document.getElementById("doc");
 
 const generate = document.getElementById("generate_btn") || HTMLButtonElement;
 
+// const arr = [];
+
 function purifyDate(date) {
 
     const DMY = date.split("-");
@@ -21,6 +23,16 @@ function purifyDate(date) {
     return refined_date.toString();
 }
 
+// window.onload = ()=>{
+//     let Data = sessionStorage.getItem("Data");
+//     if(Data == null){
+//         // document.getElementById("Sir-name").value = "Khan"; WORKING
+//         console.log(`The key "Data" never existed!`);
+//     }
+//     else{
+//         console.log(JSON.parse(Data));
+//     }
+// };
 
 generate.addEventListener('click', (e) => {
 
@@ -82,6 +94,9 @@ generate.addEventListener('click', (e) => {
 
     Unloading_point = Unloading_point != '' && Unloading_point != 0 ? Unloading_point : '';
 
+    // arr.push(Custom_date,Sir_name,Party_name,Truck_number,Drop_location,Pickup_location,Fixed_rate,Advance_wage,Load,Payment_location,Remark,Unloading_point);
+
+    // sessionStorage.setItem("Data" , JSON.stringify(arr));
 
     var reader = new FileReader();
     if (docs.files.length === 0) {
@@ -125,8 +140,10 @@ generate.addEventListener('click', (e) => {
             // For a 50MB output document, expect 500ms additional CPU time
             compression: "DEFLATE",
         });
+
+      
         // Output the document using Data-URI
         saveAs(blob, `${Truck_number}.docx`);
     };
-
+   
 });

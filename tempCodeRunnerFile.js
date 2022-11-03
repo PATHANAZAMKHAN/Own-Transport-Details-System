@@ -1,0 +1,1 @@
+ // arr.push(Memo_no,Truck_number,Custom_date,Driver_name,Driver_number,Pickup_location,Drop_location,Truck_owner_name,Truck_owner_number,Truck_owner_address,Transporter_name,Load_description,Load_weight,Load_height,Load_wage,Advance_wage,Commission_amount,Tapal_amount,Tds_advance,weight_wage,Guide,Unloading_charges,Party_refund,other_charges,Calculated_amount)

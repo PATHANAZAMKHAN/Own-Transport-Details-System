@@ -41,28 +41,31 @@ body {
     color: orange;
 }
 
-#navbar{
+#navbar {
     margin-top: -25px;
 }
 
-#navigation{
+#navigation {
     width: 100vw;
     height: 6vh;
     list-style: none;
+    position: fixed;
+    top: 0;
+    left:0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     border-radius: 10px;
-    background-color: rgb(0,159,253);
-    background-image: linear-gradient(180deg, rgba(0,159,253,1) 0%, rgba(42,42,114,1) 83%);
+    background-color: rgb(0, 159, 253);
+    background-image: linear-gradient(180deg, rgba(0, 159, 253, 1) 0%, rgba(42, 42, 114, 1) 83%);
 }
 
-.nav_items > a{
+.nav_items>a {
     text-decoration: none;
     color: white;
 }
 
-.nav_items > a:hover{
+.nav_items>a:hover {
     color: red;
 }
 
@@ -92,16 +95,15 @@ input::file-selector-button {
 
     #generate_btn {
         bottom: 1rem;
-        right: 24%;
-        left: 24%;
+        right: 25%;
+        left: 25%;
     }
 
-    @supports (-moz-appearance:none) {
-        #generate_btn {
-            bottom: .5rem;
-            right: 30%;
-            left: 40%;
-        }
+}
+
+@media screen and (max-height: 680px) {
+    #generate_btn {
+        bottom: .2rem;
     }
 }
 
@@ -112,31 +114,14 @@ input::file-selector-button {
     }
 
     #generate_btn {
-        bottom: .5rem;
-        right: 10%;
-        left: 10%;
-    }
-
-    @supports (-moz-appearance:none) {
-        #heading {
-            grid-column: span 2;
-        }
-
-        #generate_btn {
-            left: 3%;
-        }
-    }
-}
-
-@media screen and (max-height: 680px) {
-    #generate_btn {
         bottom: .4rem;
-        right: 30%;
-        left: 30%;
+        right: 15%;
+        left: 15%
     }
+
 }
 
-@supports (-moz-appearance:none) {
+/* @supports (-moz-appearance:none) {
 
     #generate_btn {
         bottom: .5rem;
@@ -144,4 +129,4 @@ input::file-selector-button {
         width: 60%;
     }
 
-}
+} */
