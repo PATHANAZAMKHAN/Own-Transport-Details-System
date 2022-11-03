@@ -120,7 +120,7 @@ generate.addEventListener('click', (e) => {
 
     Advance = Advance != '' && Advance != 0 && Advance != NaN ? Advance : 0;
 
-    let Balance = parseInt(Fixed_rupees) - parseInt(Advance);
+    let Balance = parseInt(Calculated_collection) - parseInt(Advance);
 
     Balance = Balance != '' && Balance != 0 && Balance != NaN ? Balance : 0;
 
