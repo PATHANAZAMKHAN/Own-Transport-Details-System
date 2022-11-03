@@ -2,6 +2,8 @@ const docs = document.getElementById("doc");
 
 const generate = document.getElementById("generate_btn");
 
+// const arr = new Array();
+
 function purifyDate(date) {
 
     const DMY = date.split("-");
@@ -90,10 +92,6 @@ generate.addEventListener('click', (e) => {
 
     Particulars = Particulars != '' && Particulars != 0 ? Particulars : '';
 
-    let Articles = document.getElementById("Articles").value;
-
-    Articles = Articles != '' && Articles != 0 ? Articles : '';
-
     let Weight = document.getElementById("Weight").value;
 
     Weight = Weight != '' && Weight != 0 ? Weight : '';
@@ -109,14 +107,14 @@ generate.addEventListener('click', (e) => {
     let Height_freight = document.getElementById("Height_freight").value;
 
     Height_freight = Height_freight != '' && Height_freight != 0 && Height_freight != NaN ? Height_freight : 0;
-
+    
     let Workout = document.getElementById("Workout").value;
-
+    
     Workout = Workout != '' && Workout != 0 && Workout != NaN ? Workout : 0;
-
-    let Fixed_rupees = document.getElementById("Fixed_rupees").value;
-
-    Fixed_rupees = Fixed_rupees != '' && Fixed_rupees != 0 && Fixed_rupees != NaN ? Fixed_rupees : 0;
+    
+    // Total of height charge, height freight and total collection
+    
+    let Calculated_collection = parseInt(Height_charge) + parseInt(Height_freight) + parseInt(Total_collection);
 
     let Advance = document.getElementById("Advance").value;
 
@@ -146,7 +144,7 @@ generate.addEventListener('click', (e) => {
 
     let Weight_wage = document.getElementById("Weight_wage").value;
 
-    Weight_wage = Weight_wage != '' && Weight_wage != 0 && Weight_wage != NaN ? Weight_wage : 0; //number
+    Weight_wage = Weight_wage != '' && Weight_wage != 0 && Weight_wage != NaN ? Weight_wage : 0;
 
     let Guide = document.getElementById("Guide").value;
 
@@ -161,36 +159,6 @@ generate.addEventListener('click', (e) => {
     let Grand_total = parseInt(Commission) + parseInt(Tapal_amount) + parseInt(Weight_wage) + parseInt(Guide) + parseInt(other_charges);
 
     Grand_total = Grand_total != '' && Grand_total != 0 && Grand_total != NaN ? Grand_total : 0;
-
-    //Total from here to Amount
-
-    let Collection = document.getElementById("Collection").value;
-
-    Collection = Collection != '' && Collection != 0 && Collection != NaN ? Collection : 0;
-
-    let Actual_rupees = document.getElementById("Actual_rupees").value;
-
-    Actual_rupees = Actual_rupees != '' && Actual_rupees != 0 && Actual_rupees != NaN ? Actual_rupees : 0;
-
-    let Freight = document.getElementById("Freight").value;
-
-    Freight = Freight != '' && Freight != 0 && Freight != NaN ? Freight : 0;
-
-    let Difference = document.getElementById("Difference").value;
-
-    Difference = Difference != '' && Difference != 0 && Difference != NaN ? Difference : 0;
-
-    //To here
-
-    let Amount_received = parseInt(Collection) + parseInt(Actual_rupees) + parseInt(Freight) + parseInt(Difference)
-
-    Amount_received = Amount_received != '' && Amount_received != 0 && Amount_received != NaN ? Amount_received : 0;
-
-    //Other instructions
-
-    let Special_instruction = document.getElementById("Special_instruction").value;
-
-    Special_instruction = Special_instruction != '' && Special_instruction != 0 ? Special_instruction : '';
 
     const reader = new FileReader();
 
@@ -228,13 +196,12 @@ generate.addEventListener('click', (e) => {
             Consignor: Consignor,
             Consignee: Consignee,
             Particulars: Particulars,
-            Articles: Articles, 
             Weight: Weight,
             Total_collection: Total_collection,
             Height_charge: Height_charge,
             Height_freight: Height_freight,
             Workout: Workout,
-            Lorry: Fixed_rupees,
+            Calculated_collection: Calculated_collection, 
             Advance: Advance,
             Balance: Balance,
             Payment_location: Payment_location,
@@ -244,13 +211,7 @@ generate.addEventListener('click', (e) => {
             Weight_wage: Weight_wage,
             Guide_rupees: Guide,
             Other_expenses: other_charges,
-            Grand_total: Grand_total,
-            Collection: Collection,
-            Actual_lorry: Actual_rupees,
-            Freight: Freight,
-            Difference: Difference,
-            Amount: Amount_received,
-            Special_instructions: Special_instruction
+            Grand_total: Grand_total
         });
 
         const blob = doc.getZip().generate({

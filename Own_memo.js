@@ -160,36 +160,6 @@ generate.addEventListener('click', (e) => {
 
     Grand_total = Grand_total != '' && Grand_total != 0 && Grand_total != NaN ? Grand_total : 0;
 
-    //Total from here to Amount
-
-    let Collection = document.getElementById("Collection").value;
-
-    Collection = Collection != '' && Collection != 0 && Collection != NaN ? Collection : 0;
-
-    let Actual_rupees = document.getElementById("Actual_rupees").value;
-
-    Actual_rupees = Actual_rupees != '' && Actual_rupees != 0 && Actual_rupees != NaN ? Actual_rupees : 0;
-
-    let Freight = document.getElementById("Freight").value;
-
-    Freight = Freight != '' && Freight != 0 && Freight != NaN ? Freight : 0;
-
-    let Difference = document.getElementById("Difference").value;
-
-    Difference = Difference != '' && Difference != 0 && Difference != NaN ? Difference : 0;
-
-    //To here
-
-    let Amount_received = parseInt(Collection) + parseInt(Actual_rupees) + parseInt(Freight) + parseInt(Difference)
-
-    Amount_received = Amount_received != '' && Amount_received != 0 && Amount_received != NaN ? Amount_received : 0;
-
-    //Other instructions
-
-    let Special_instruction = document.getElementById("Special_instruction").value;
-
-    Special_instruction = Special_instruction != '' && Special_instruction != 0 ? Special_instruction : '';
-
     const reader = new FileReader();
 
     if (docs.files.length === 0) {
@@ -241,13 +211,7 @@ generate.addEventListener('click', (e) => {
             Weight_wage: Weight_wage,
             Guide_rupees: Guide,
             Other_expenses: other_charges,
-            Grand_total: Grand_total,
-            Collection: Collection,
-            Actual_lorry: Actual_rupees,
-            Freight: Freight,
-            Difference: Difference,
-            Amount: Amount_received,
-            Special_instructions: Special_instruction
+            Grand_total: Grand_total
         });
 
         const blob = doc.getZip().generate({
