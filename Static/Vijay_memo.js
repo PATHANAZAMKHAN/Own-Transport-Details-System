@@ -76,10 +76,6 @@ generate.addEventListener('click', (e) => {
 
     Driver_number = Driver_number != '' && Driver_number != 0 && Driver_number != NaN ? Driver_number : 0;
 
-    let Driving_license_number = document.getElementById("Driving_license_number").value;
-
-    Driving_license_number = Driving_license_number != '' && Driving_license_number != 0 ? Driving_license_number : '';
-
     let Consignor = document.getElementById("Consignor").value;
 
     Consignor = Consignor != '' && Consignor != 0 ? Consignor : '';
@@ -192,7 +188,6 @@ generate.addEventListener('click', (e) => {
             Owner_address: Truck_owner_address,
             Owner_name: Truck_owner_name,
             Driver_number: Driver_number,
-            Driving_license_number: Driving_license_number,
             Consignor: Consignor,
             Consignee: Consignee,
             Particulars: Particulars,
