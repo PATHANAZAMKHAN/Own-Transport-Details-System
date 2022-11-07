@@ -80,6 +80,10 @@ input::file-selector-button {
     cursor: pointer;
 }
 
+input[type = "text"], input[type = "number"], input[type = "tel"], textarea{
+    font-size: 20px;
+}
+
 #generate_btn {
     position: absolute;
     bottom: .5rem;
