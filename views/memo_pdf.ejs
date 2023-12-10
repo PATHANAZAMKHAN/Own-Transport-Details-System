@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        *,
+        *::after,
+        *::before {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 260mm;
+            height: 294mm;
+        }
+
+        body {
+            border: 2px solid black;
+            height: 100%;
+            width: 100%;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .header {
+            display: flex;
+            border: 1px solid black;
+            text-align: center;
+            justify-content: space-between;
+            align-items: stretch;
+        }
+
+        #mapLogo {
+            width: 120px;
+        }
+
+        .content {
+            font-weight: bold;
+        }
+
+        #ots_heading {
+            font-size: x-large;
+            color: red;
+            text-decoration: underline;
+        }
+
+        #heading-2 {
+            font-size: small;
+            color: red;
+        }
+
+        .extra_content {
+            font-size: small;
+            color: green;
+        }
+
+        #logoImg {
+            width: 120px;
+        }
+
+        .contactInfo {
+            text-align: center;
+            font-weight: bold;
+            display: flex;
+            flex-direction: column;
+            width: 20%;
+            justify-content: space-evenly;
+            color: green;
+            font-size: medium;
+        }
+
+        #mob_no {
+            text-align: left;
+        }
+
+        .inputBoxes {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .box,
+        .box-long,
+        .box-streched {
+            padding: 10px;
+            border: 1px solid black;
+            word-break: keep-all;
+            white-space: wrap;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 50%;
+        }
+
+        .box-long {
+            width: 100%;
+        }
+
+        .box-streched {
+            flex-grow: 1;
+            width: 14%;
+            height: 160px;
+            text-align: center;
+        }
+
+        .font {
+            font-size: medium;
+            color: green;
+            font-weight: bold;
+            word-break: keep-all;
+        }
+
+        #sign {
+            width: 150px;
+            margin-right: 15%;
+            margin-top: -10px;
+        }
+
+        .img-align {
+            height: 49px;
+            text-align: right;
+            border: none;
+        }
+
+        .end-content {
+            text-align: center;
+            border: none;
+        }
+
+        .input_value {
+            color: black;
+            font-weight: bold;
+            word-break: keep-all;
+            white-space: wrap;
+        }
+
+        .dark-border {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="mapImage">
+            <img id="mapLogo" src=<%=Company_logo %> alt="Failed to load logo" />
+        </div>
+        <div class="content">
+            <span class="font" id="ots_heading">
+                <%= Custom_heading %>
+            </span class="font"> <br />
+            <span class="font" id="heading-2">FLEET OWNERS & TRANSPORT CONTRACTOR</span class="font"><br />
+            <span class="extra_content">105, KHAN ESTATE, OPP. BRTS BUS DEPO, NEAR TRUPTI GUEST HOUSE,</span>
+            <br />
+            <span class="extra_content">NAROL ROAD, AHMEDABAD-382405. (GUJARAT)</span>
+        </div>
+        <div class="logo">
+            <img id="logoImg" src=<%=Custom_logo%> alt="Failed to load logo" />
+        </div>
+        <div class="contactInfo">
+            <p id="mob_no">Mobile no.</p>
+            <p>93763 24312</p>
+            <p>98250 24964</p>
+            <p>63555 44364</p>
+            <p>94092 77976</p>
+        </div>
+    </div>
+
+    <div class="inputBoxes">
+        <div class="box">
+            <span class="font">Memo No.: </span>
+            <span class="input_value">
+                <%= Memo_number %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Truck No.: </span>
+            <span class="input_value">
+                <%= Truck_number %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Date.:</span>
+            <span class="input_value">
+                <%= Inserted_date %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">From.:</span>
+            <span class="input_value">
+                <%= Pickup_location %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">To.:</span>
+            <span class="input_value">
+                <%= Drop_location %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Driver's Name.:</span>
+            <span class="input_value">
+                <%= Driver_name %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Owner's Address.:</span>
+            <span class="input_value">
+                <%= Owner_address %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Owner's Name.:</span>
+            <span class="input_value">
+                <%= Owner_name %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Owner's No.:</span>
+            <span class="input_value">
+                <%= Owner_number %>
+            </span>
+        </div>
+        <div class="box-streched">
+            <span class="font">Consignor</span> <br><br><br>
+            <span class="input_value">
+                <%= Consignor %>
+            </span>
+        </div>
+        <div class="box-streched">
+            <span class="font">Consignee</span> <br> <br> <br>
+            <span class="input_value">
+                <%= Consignee %>
+            </span>
+        </div>
+        <div class="box-streched">
+            <span class="font">Particulars</span> <br><br> <br>
+            <span class="input_value">
+                <%= Particulars %>
+            </span>
+        </div>
+        <div class="box-streched">
+            <span class="font">Weight Ton Kgs</span> <br><br> <br>
+            <span class="input_value">
+                <%= Weight %>
+            </span>
+        </div>
+        <div class="box-streched">
+            <span class="font">Height Charge</span> <br>
+            <span class="font">extra fix:</span> <br><br>
+            <span class="input_value">
+                <%= Height_charge %>
+            </span>
+        </div>
+        <div class="box-streched">
+            <span class="font">Freight Charge</span> <br>
+            <span class="font">extra:</span> <br><br>
+            <span class="input_value">
+                <%= Height_freight %>
+            </span>
+        </div>
+        <div class="box-streched">
+            <span class="font">Total Collection</span><br>
+            <span class="font">Rs &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
+                Ps</span><br><br>
+            <span class="input_value">
+                <%= Total_collection %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Per Ton. Work out to Rs.:</span>
+            <span class="input_value">
+                <%= Workout %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Kgs Lorry hire fixed Rs.:</span>
+            <span class="input_value">
+                <%= Calculated_collection %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Balance.:</span>
+            <span class="input_value">
+                <%= Balance %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Paid Advance Rs.:</span>
+            <span class="input_value">
+                <%= Advance %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Payable of.:</span>
+            <span class="input_value">
+                <%= Payment_location %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">Remarks (If any).:</span>
+            <span class="input_value">
+                <%= Remarks %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Commission.:</span>
+            <span class="input_value">
+                <%= Commission %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Hamali & Tapal.:</span>
+            <span class="input_value">
+                <%= Tapal %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Weight.:</span>
+            <span class="input_value">
+                <%= Weight_wage %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Guide/L. Drive.:</span>
+            <span class="input_value">
+                <%= Guide_rupees %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Other Expenses.:</span>
+            <span class="input_value">
+                <%= Other_expenses %>
+            </span>
+        </div>
+        <div class="box">
+            <span class="font">Total Amount Received.:</span>
+            <span class="input_value">
+                <%= Grand_total %>
+            </span>
+        </div>
+        <div class="box-long">
+            <span class="font">
+                Note: <br>
+                (1) Extra Commission for Adjustment loads. <br>
+                (2) Hire guaranteed against safe delivery. <br>
+                (3) Freight Charges are Inclusive of unloading charges. <br>
+                (4) Balance Lorry Hire will not be paid for Acknowledgement Received after 15 days without accepting 50
+                Rs as a penalty.
+            </span>
+        </div>
+
+
+        <div class="end-content box ">
+            <span class="font"> Received the above article in good as per Terms and conditions.</span>
+        </div>
+        <div class="end-content box">
+            <span class="font"> For, <%= Custom_heading %></span>
+        </div>
+        <div class="box-long img-align">
+            <img id="sign" src=<%=Custom_signature %> alt="Failed loading signature">
+        </div>
+        <div class="end-content box ">
+            <span class="font">No delivery on Sunday & Holidays</span>
+        </div>
+        <div class="end-content box ">
+            <span class="font">Owner's/Driver's Signature</span>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

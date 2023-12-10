@@ -1,0 +1,133 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 260mm;
+  height: 294mm;
+}
+
+body {
+  border: 2px solid black;
+  height: 100%;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+}
+
+.header {
+  display: flex;
+  border: 1px solid black;
+  text-align: center;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+#mapLogo {
+  width: 120px;
+}
+.content {
+  font-weight: bold;
+}
+
+#ots_heading {
+  font-size: x-large;
+  color: red;
+  text-decoration: underline;
+}
+
+#heading-2 {
+  font-size: small;
+  color: red;
+}
+
+.extra_content {
+  font-size: small;
+  color: green;
+}
+
+#logoImg {
+  width: 120px;
+}
+.contactInfo {
+  text-align: center;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  justify-content: space-evenly;
+  color: green;
+  font-size: medium;
+}
+
+#mob_no {
+  text-align: left;
+}
+
+.inputBoxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.box,
+.box-long,
+.box-streched {
+  padding: 10px;
+  border: 1px solid black;
+  word-break: keep-all;
+  white-space: wrap;
+  overflow: hidden;
+}
+
+.box {
+  width: 50%;
+}
+
+.box-long {
+  width: 100%;
+}
+
+.box-streched {
+  flex-grow: 1;
+  width: 14%;
+  height: 160px;
+  text-align: center;
+}
+
+.font {
+  font-size: medium;
+  color: green;
+  font-weight: bold;
+  word-break: keep-all;
+}
+
+#sign {
+  width: 150px;
+  margin-right: 15%;
+  margin-top: -10px;
+}
+
+.img-align {
+  height: 49px;
+  text-align: right;
+  border: none;
+}
+
+.end-content {
+  text-align: center;
+  border: none;
+}
+
+.input_value {
+  color: black;
+  font-weight: bold;
+  word-break: keep-all;
+  white-space: wrap;
+}
+
+.dark-border {
+  border: 2px solid black;
+}

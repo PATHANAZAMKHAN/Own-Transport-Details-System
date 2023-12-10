@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VIJAY ANDHRA MEMO SERVICE</title>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="shortcut icon" href="/Transport-Truck.ico" type="image/x-icon" />
+</head>
+
+<body>
+  <nav>
+    <ul id="navigation">
+      <li class="nav_items"><a href=<%= OTSMEMOURL %>>OTS MEMO</a></li>
+      <li class="nav_items"><a href=<%= OTSSLIPURL %>>OTS SLIP</a></li>
+      <li class="nav_items"><a href=<%= VIJAYANDRAMEMOURL %>>VARL MEMO</a></li>
+      <li class="nav_items"><a href=<%= VIJAYANDRASLIPURL%>>VARL SLIP</a></li>
+    </ul>
+  </nav>
+
+  <form id="main" method="post" action=<%= VIJAYANDRAMEMOURL %>>
+    <h2 id="heading">VIJAY ANDHRA MEMO GENERATOR</h2>
+
+    <%- include('common_memo') %>
+
+
+  </form>
+</body>
+
+</html>
