@@ -1,12 +1,13 @@
 {
-  "name": "Transport_System_Nodejs",
+  "name": "transport_system_nodejs",
   "version": "2.0.0",
   "description": "A simple program to create pdf via a form that populated data into a word file and the convert it to pdf for download",
   "author": "PATHANAZAMKHAN",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "nest build",
+    "build": "nest build && npm run copy-static",
+    "copy-static": "ncp ./src/public ./dist/public && ncp ./src/views ./dist/views",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
