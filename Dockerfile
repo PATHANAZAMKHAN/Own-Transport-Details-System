@@ -8,4 +8,6 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm ci
 COPY . .
-CMD [ "node", "start:prod" ]
+
+RUN npm run build
+CMD ["node", "dist/main"]
