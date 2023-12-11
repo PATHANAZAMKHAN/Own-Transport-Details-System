@@ -1,6 +1,6 @@
 import { CreateMemoDto } from 'src/common_dto/create_memo';
 import { CreateSlipDto } from 'src/common_dto/create_slip';
-import { launch, executablePath } from 'puppeteer';
+import { launch } from 'puppeteer';
 import { renderFile } from 'ejs';
 
 export class PDFCreator {
@@ -15,19 +15,7 @@ export class PDFCreator {
   async generatePDF(Custom_height?: string, Custom_width?: string) {
     const template = await renderFile(this.filePathToRead, this.ObjectToInject);
 
-    const browser = await launch({
-      headless: 'new',
-      args: [
-        '--disable-setuid-sandbox',
-        '--no-sandbox',
-        '--single-process',
-        '--no-zygote',
-      ],
-      executablePath:
-        process.env.NODE_ENV === 'production'
-          ? process.env.PUPPETEER_EXECUTABLE_PATH
-          : executablePath(),
-    });
+    const browser = await launch({ headless: 'new' });
     const page = await browser.newPage();
     await page.setContent(template, { waitUntil: 'domcontentloaded' });
 
