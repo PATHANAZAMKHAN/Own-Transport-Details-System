@@ -43,8 +43,8 @@ export class CreateMemoDto {
 
   @Transform(({ value }) =>
     value
-      ? new Date(value).toLocaleDateString()
-      : new Date().toLocaleDateString(),
+      ? new Date(value).toLocaleDateString('en-GB')
+      : new Date().toLocaleDateString('en-GB'),
   )
   @IsOptional()
   Inserted_date: string;

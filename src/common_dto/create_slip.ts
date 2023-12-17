@@ -18,8 +18,8 @@ export class CreateSlipDto {
 
   @Transform(({ value }) =>
     value
-      ? new Date(value).toLocaleDateString()
-      : new Date().toLocaleDateString(),
+      ? new Date(value).toLocaleDateString('en-GB')
+      : new Date().toLocaleDateString('en-GB'),
   )
   @IsOptional()
   Date: string;
