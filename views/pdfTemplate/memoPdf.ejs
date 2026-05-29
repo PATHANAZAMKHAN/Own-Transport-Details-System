@@ -12,6 +12,11 @@
       box-sizing: border-box;
     }
 
+    @page {
+      size: 260mm 296mm;
+      margin: 0;
+    }
+
     html {
       width: 260mm;
       height: 296mm;
@@ -22,6 +27,10 @@
       height: 100%;
       width: 100%;
       font-family: 'Roboto', sans-serif;
+    }
+
+    img {
+      display: block;
     }
 
     .header {
@@ -83,11 +92,12 @@
     .box,
     .box-long,
     .box-streched {
-      padding: 10px;
+      padding: 8px 10px;
       border: 1px solid black;
       word-break: keep-all;
       white-space: wrap;
       overflow: hidden;
+      line-height: 1.2;
     }
 
     .box {
@@ -110,10 +120,12 @@
       color: green;
       font-weight: bold;
       word-break: keep-all;
+      line-height: 1.2;
     }
 
     #sign {
       width: 150px;
+      margin-left: auto;
       margin-right: 15%;
       margin-top: -10px;
     }

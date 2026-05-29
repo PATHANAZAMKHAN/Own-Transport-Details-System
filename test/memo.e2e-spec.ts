@@ -11,6 +11,7 @@ import { AppModule } from '../src/modules/app.module';
 import { CacheLogoService } from '../src/providers/cacheLogo.service';
 import { memoStub } from './__stubs__/memo.stub';
 import { createRenderServiceStub } from './__stubs__/renderService.stub';
+import { countPdfPages } from './__utils__/pdf.util';
 
 describe('MemoModule (e2e)', () => {
 	let app: NestExpressApplication;
@@ -101,6 +102,7 @@ describe('MemoModule (e2e)', () => {
 
 		const receivedBuffer = otsMemoResponse.body as Buffer;
 		expect(receivedBuffer.length).toBeGreaterThan(0);
+		expect(countPdfPages(receivedBuffer)).toBe(1);
 	}, 10000);
 
 	it('/memo/vijay (POST)', async () => {
@@ -116,5 +118,6 @@ describe('MemoModule (e2e)', () => {
 
 		const receivedBuffer = vijayMemoResponse.body as Buffer;
 		expect(receivedBuffer.length).toBeGreaterThan(0);
+		expect(countPdfPages(receivedBuffer)).toBe(1);
 	}, 10000);
 });

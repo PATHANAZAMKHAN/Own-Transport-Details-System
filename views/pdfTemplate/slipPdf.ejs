@@ -12,6 +12,11 @@
       box-sizing: border-box;
     }
 
+    @page {
+      size: 210mm 193mm;
+      margin: 0;
+    }
+
     html {
       width: 210mm;
       height: 193mm;
@@ -22,6 +27,10 @@
       height: 100%;
       width: 100%;
       font-family: 'Roboto', sans-serif;
+    }
+
+    img {
+      display: block;
     }
 
     .header {
@@ -82,11 +91,12 @@
 
     .box,
     .box-long {
-      padding: 10px;
+      padding: 8px 10px;
       border: 1px solid black;
       word-break: break-all;
       white-space: wrap;
       overflow: hidden;
+      line-height: 1.2;
     }
 
     .box {
@@ -102,6 +112,7 @@
       color: green;
       font-weight: bold;
       word-break: keep-all;
+      line-height: 1.2;
     }
 
     .input_value {
@@ -113,6 +124,7 @@
 
     #sign {
       width: 150px;
+      margin-left: auto;
       margin-right: 2%;
     }
 

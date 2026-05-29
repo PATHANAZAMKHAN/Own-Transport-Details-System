@@ -9,9 +9,9 @@ import request from 'supertest';
 import { TEMPLATE_FILE_PATHS } from '../src/constants/common.constants';
 import { AppModule } from '../src/modules/app.module';
 import { CacheLogoService } from '../src/providers/cacheLogo.service';
-import { memoStub } from './__stubs__/memo.stub';
 import { createRenderServiceStub } from './__stubs__/renderService.stub';
 import { slipStub } from './__stubs__/slip.stub';
+import { countPdfPages } from './__utils__/pdf.util';
 
 describe('SlipModule (e2e)', () => {
 	let app: NestExpressApplication;
@@ -97,11 +97,12 @@ describe('SlipModule (e2e)', () => {
 
 		expect(otsSlipResponse.headers['content-type']).toBe('application/pdf');
 		expect(otsSlipResponse.headers['content-disposition']).toContain(
-			`attachment; filename=${memoStub.Truck_number}.pdf`,
+			`attachment; filename=${slipStub.Truck_number}.pdf`,
 		);
 
 		const receivedBuffer = otsSlipResponse.body as Buffer;
 		expect(receivedBuffer.length).toBeGreaterThan(0);
+		expect(countPdfPages(receivedBuffer)).toBe(1);
 	}, 10000);
 
 	it('/slip/vijay (POST)', async () => {
@@ -112,10 +113,11 @@ describe('SlipModule (e2e)', () => {
 
 		expect(vijaySlipResponse.headers['content-type']).toBe('application/pdf');
 		expect(vijaySlipResponse.headers['content-disposition']).toContain(
-			`attachment; filename=${memoStub.Truck_number}.pdf`,
+			`attachment; filename=${slipStub.Truck_number}.pdf`,
 		);
 
 		const receivedBuffer = vijaySlipResponse.body as Buffer;
 		expect(receivedBuffer.length).toBeGreaterThan(0);
+		expect(countPdfPages(receivedBuffer)).toBe(1);
 	}, 10000);
 });
