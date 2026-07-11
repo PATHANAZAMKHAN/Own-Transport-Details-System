@@ -5,8 +5,7 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN npm install -g npm@latest @nestjs/cli@latest \
-    && npm install
+RUN npm install
 
 COPY . .
 
