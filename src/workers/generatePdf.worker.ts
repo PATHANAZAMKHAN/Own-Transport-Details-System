@@ -13,7 +13,7 @@ void (async () => {
 		});
 
 		const page = await browser.newPage();
-		await page.setContent(content, { waitUntil: 'networkidle0' });
+		await page.setContent(content, { waitUntil: 'domcontentloaded' });
 
 		const buffer = await page.pdf({
 			height,
